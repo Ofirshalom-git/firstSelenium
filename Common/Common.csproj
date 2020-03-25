@@ -53,13 +53,16 @@
     <Compile Include="Basic comppenants\ColumnsContainer.cs" />
     <Compile Include="Basic pages\CartPage.cs" />
     <Compile Include="Basic pages\CatalogPage.cs" />
+    <Compile Include="Basic comppenants\CartTable.cs" />
+    <Compile Include="Basic comppenants\CatalogRow.cs" />
     <Compile Include="ComppenantBase.cs" />
     <Compile Include="DriverUser.cs" />
     <Compile Include="Basic comppenants\FooterContainer.cs" />
     <Compile Include="Basic comppenants\HeaderContainer.cs" />
-    <Compile Include="HomePage.cs" />
+    <Compile Include="Basic pages\HomePage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Basic comppenants\TextBox.cs" />
+    <Compile Include="Quantity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -7,7 +7,13 @@ using OpenQA.Selenium;
 
 namespace Common
 {
-    public class CatalogPage : BasePage
+    public class CatalogPage : HomePage
     {
+
+
+        public CatalogPage(IWebDriver driver) : base(driver)
+        {
+
+        }
     }
 }

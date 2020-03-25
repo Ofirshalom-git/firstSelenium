@@ -7,11 +7,18 @@ using OpenQA.Selenium;
 
 namespace Common
 {
-    public class BasePage : DriverUser
+    public abstract class BasePage : DriverUser
     {
-        public HeaderContainer Header;
-        public ColumnsContainer Columns;
-        public FooterContainer Footer;
+        protected HeaderContainer Header => new HeaderContainer(Driver, Driver.FindElement(By.CssSelector("#header")));
+        protected FooterContainer Footer;
 
+        public BasePage(IWebDriver driver) : base(driver)
+        {
+
+        }
+
+        public CatalogPage GoToCatalogPage() =>
+            Header.MyStoreButton.Click<CatalogPage>();
+        
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenQA.Selenium;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,10 +9,15 @@ namespace Common
 {
     public class Button : ComppenantBase
     {
+        public Button(IWebDriver driver, IWebElement parentElement) : base(driver, parentElement)
+        {
+
+        }
 
         public T Click<T>()
         {
-            //click on the property and return the page needed
+            ParentElement.Click();
+            return (T)Activator.CreateInstance(typeof(T), Driver);
         }
     }
 }

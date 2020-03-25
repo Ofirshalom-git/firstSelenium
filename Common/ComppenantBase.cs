@@ -7,8 +7,13 @@ using System.Threading.Tasks;
 
 namespace Common
 {
-    public class ComppenantBase : DriverUser
+    public abstract class ComppenantBase : DriverUser
     {
-        IWebElement ParentElement; //=> set it  ;
+        protected IWebElement ParentElement { get; private set; }
+
+        public ComppenantBase(IWebDriver driver, IWebElement parentElement) : base(driver)
+        {
+            ParentElement = parentElement;
+        }
     }
 }

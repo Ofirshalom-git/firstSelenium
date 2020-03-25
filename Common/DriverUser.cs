@@ -9,6 +9,11 @@ namespace Common
 {
     public abstract class DriverUser
     {
-        IWebDriver Driver; //set it;
+        protected IWebDriver Driver { get; private set; }
+
+        public DriverUser(IWebDriver driver)
+        {
+            Driver = driver;
+        }
     }
 }
