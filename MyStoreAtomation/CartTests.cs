@@ -12,7 +12,8 @@ namespace MyStoreAtomation
         [TestMethod]
         public void DeleteItemTest()
         {
-
+            //catalog page => go to first product => press on add to cart => click on cart button => check num of items => delete item => num of items.Should.Be(equalTo(0)); 
+            Console.WriteLine("hereeee");
         }
 
         [TestMethod]

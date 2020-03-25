@@ -9,7 +9,7 @@ namespace Common
 {
     public class CatalogRow : ComppenantBase
     {
-        public IWebElement Row => Driver.FindElement(By.CssSelector(".row"));
+        public IWebElement RowContent => Driver.FindElement(By.CssSelector(".tab-content"));
 
         public CatalogRow(IWebDriver driver, IWebElement parentElement) : base(driver, parentElement)
         {
