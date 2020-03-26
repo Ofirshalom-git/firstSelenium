@@ -7,9 +7,9 @@ using OpenQA.Selenium;
 
 namespace Common
 {
-    public class CatalogPage : HomePage
+    public class CatalogPage : BasePage
     {
-
+        public CatalogRowContent RowContent => new CatalogRowContent(Driver, Driver.FindElement(By.CssSelector(".tab-content")));
 
         public CatalogPage(IWebDriver driver) : base(driver)
         {

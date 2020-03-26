@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Common
 {
     public class Button : ComppenantBase
-    {
+    { 
         public Button(IWebDriver driver, IWebElement parentElement) : base(driver, parentElement)
         {
 

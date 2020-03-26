@@ -9,10 +9,9 @@ namespace MyStoreAtomation
     [TestClass]
     public class UnitTestBase
     {
-        protected HomePage HomePage;
-        protected CatalogPage CatalogPage;
-
-        private IWebDriver Driver;
+        protected HomePage HomePage { get; private set; }
+        protected CatalogPage CatalogPage { get; private set; }
+        private IWebDriver Driver { get; set; }
 
 
         [TestInitialize]

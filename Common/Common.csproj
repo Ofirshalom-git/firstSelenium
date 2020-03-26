@@ -48,13 +48,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Basic comppenants\Class1.cs" />
+    <Compile Include="Basic comppenants\Filters.cs" />
+    <Compile Include="Basic comppenants\Items.cs" />
     <Compile Include="BasicAbstractClasses\BasePage.cs" />
     <Compile Include="Basic comppenants\Button.cs" />
     <Compile Include="Basic comppenants\ColumnsContainer.cs" />
     <Compile Include="Basic pages\CartPage.cs" />
     <Compile Include="Basic pages\CatalogPage.cs" />
     <Compile Include="Basic comppenants\CartTable.cs" />
-    <Compile Include="Basic comppenants\CatalogRow.cs" />
     <Compile Include="Basic comppenants\ColorRow.cs" />
     <Compile Include="BasicAbstractClasses.cs" />
     <Compile Include="BasicAbstractClasses\ComppenantBase.cs" />
@@ -68,6 +70,7 @@
     <Compile Include="Basic comppenants\CatalogRowContent.cs" />
     <Compile Include="Basic pages\ViewItemPage.cs" />
     <Compile Include="Basic comppenants\ViewItemRow.cs" />
+    <Compile Include="QuickViewPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
