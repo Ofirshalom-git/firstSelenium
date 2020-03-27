@@ -22,11 +22,14 @@ namespace Common
 
         }
 
-        public QuickViewPage ClickQuickView(int index) =>
-            QuickViewButton.Click<QuickViewPage>();
+        public QuickViewWindow ClickQuickView() =>
+            QuickViewButton.Click<QuickViewWindow>();
 
         public CatalogPage ClickByItemIndex() =>
             AddToCartButton.Click<CatalogPage>();
+
+        public BuyingItemWindow ClickAddToCart() =>
+            AddToCartButton.Click<BuyingItemWindow>();
 
 
         public double GetPrice()

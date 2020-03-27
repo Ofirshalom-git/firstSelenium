@@ -9,7 +9,7 @@ namespace Common
 {
     public class CartPage : BasePage
     {
-        public CartTable CartTable => new CartTable(Driver, Driver.FindElement(By.CssSelector("#cart_summary")));
+        public CartTable CartTable => new CartTable(Driver, Driver.FindElement(By.CssSelector("#center_column")));
 
         public CartPage(IWebDriver driver) : base(driver)
         {

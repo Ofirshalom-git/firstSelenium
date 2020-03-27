@@ -18,7 +18,7 @@ namespace Common
         }
 
         public CatalogPage GoToCatalogPage() =>
-            Header.MyStoreButton.Click<CatalogPage>();
+            Header.CatalogCategories.ClickOnWomenCategory();
         
     }
 }
