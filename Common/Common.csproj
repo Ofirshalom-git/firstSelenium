@@ -50,7 +50,6 @@
   <ItemGroup>
     <Compile Include="Basic comppenants\Class1.cs" />
     <Compile Include="Basic comppenants\Filters.cs" />
-    <Compile Include="Basic comppenants\Items.cs" />
     <Compile Include="BasicAbstractClasses\BasePage.cs" />
     <Compile Include="Basic comppenants\Button.cs" />
     <Compile Include="Basic comppenants\ColumnsContainer.cs" />
@@ -64,6 +63,8 @@
     <Compile Include="Basic comppenants\FooterContainer.cs" />
     <Compile Include="Basic comppenants\HeaderContainer.cs" />
     <Compile Include="Basic pages\HomePage.cs" />
+    <Compile Include="CatalogCategories.cs" />
+    <Compile Include="Item.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Basic comppenants\TextBox.cs" />
     <Compile Include="Basic comppenants\Quantity.cs" />

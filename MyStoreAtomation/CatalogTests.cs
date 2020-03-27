@@ -20,7 +20,7 @@ namespace MyStoreAtomation
             try
             {
                 //hover over item[0], try to access it's addToCart button, if it won't apper it will throw an exception.
-                var button = CatalogPage.RowContent.Items.HoverOnItemByIndex(0).RowContent.Items.AddToCartButton[0];
+                var button = CatalogPage.RowContent.Items[0].HoverOnItemByIndex().RowContent.Items[0].AddToCartButton;
             }
 
             catch
@@ -38,7 +38,7 @@ namespace MyStoreAtomation
             try
             {
                 //hover over item[0], try to access it's addToCart button, if it won't apper it will throw an exception.
-                var button = CatalogPage.RowContent.Items.HoverOnItemByIndex(0).RowContent.Items.AddToCartButton[0];
+                var button = CatalogPage.RowContent.Items[0].HoverOnItemByIndex().RowContent.Items[0].AddToCartButton;
             }
 
             catch
@@ -58,7 +58,7 @@ namespace MyStoreAtomation
             //go to myStore
             var preCatalogPage = preAddcartPage.Header.MyStoreButton.Click<CatalogPage>();
             //add the Item[0] to cart
-            var postCatalogPage = preCatalogPage.RowContent.Items.HoverOnItemByIndex(0).RowContent.Items.AddToCartButton[0].Click<CatalogPage>();
+            var postCatalogPage = preCatalogPage.RowContent.Items[0].HoverOnItemByIndex().RowContent.Items[0].AddToCartButton.Click<CatalogPage>();
             //go to cart and count items
             var postAddAmount = postCatalogPage.Header.CartButton.Click<CartPage>().CartTable.GetQuantity();
             //num of items should be 1 more
@@ -69,30 +69,30 @@ namespace MyStoreAtomation
         public void PickedItemColorAppersTest()
         {
             //save color's name by going to color filter and check what color by it's index 
-            var pressedColor = CatalogPage.RowContent.Items.OptionalColorsOfItem[0].Colors[0].ToString();
+            var pressedColor = CatalogPage.RowContent.Items[0].OptionalColors.Colors[0].ToString();
             //click on this color
-            CatalogPage.RowContent.Items.OptionalColorsOfItem[0].Colors[0].Click<CatalogPage>();
+            CatalogPage.RowContent.Items[0].OptionalColors.Colors[0].Click<CatalogPage>();
             //the picked color should be the same
-            CatalogPage.RowContent.Items.ViewButtonOfItem[0].Click<ViewItemPage>().ViewItemRow.PickedColor.ToString().Should().Be(pressedColor);
+            CatalogPage.RowContent.Items[0].ViewButtonOfItem.Click<ViewItemPage>().ViewItemRow.PickedColor.ToString().Should().Be(pressedColor);
         }
 
-        [TestMethod]
-        public void ColorFilterWorksTest()
-        {
-            //go to color filter & save the color's name by it's index
-            var pickedColor = CatalogPage.RowContent.Filters.ColorFilter[0].ToString();
-            //click on the color and save the page to use it
-            var postCatalogPage = CatalogPage.RowContent.Filters.ColorFilter[0].Click<CatalogPage>();
-            //            var selectedColors = new List<string>();
-            //foreach() ===> item- open it, check the selected color, add it to the list and close the quick view.
-            //then, scan all of the items in the list and make sure they are all equal to the picked color string
-            //it can be an assertion
+        //[TestMethod]
+        //public void ColorFilterWorksTest()
+        //{
+        //    //go to color filter & save the color's name by it's index
+        //    var pickedColor = CatalogPage.RowContent.Filters.ColorFilter[0].ToString();
+        //    //click on the color and save the page to use it
+        //    var postCatalogPage = CatalogPage.RowContent.Filters.ColorFilter[0].Click<CatalogPage>();
+        //    //            var selectedColors = new List<string>();
+        //    //foreach() ===> item- open it, check the selected color, add it to the list and close the quick view.
+        //    //then, scan all of the items in the list and make sure they are all equal to the picked color string
+        //    //it can be an assertion
             
-            //to shorten
-            //foreach(var color in postCatalogPage.RowContent.Items.ItemsPickedColor)
-            // add a picked color option by css selector
+        //    //to shorten
+        //    //foreach(var color in postCatalogPage.RowContent.Items.ItemsPickedColor)
+        //    // add a picked color option by css selector
             
-        }
+        //}
 
         [TestMethod]
         public void PriceRangeFilterWorksTest()
