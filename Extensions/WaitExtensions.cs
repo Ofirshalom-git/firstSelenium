@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
@@ -17,7 +13,8 @@ namespace Extensions
             return wait.Until(searchContext =>
             {
                 var element = searchContext.FindElement(by);
-                if (!element.Enabled)
+                wait.IgnoreExceptionTypes(typeof(NoSuchElementException), typeof(StaleElementReferenceException));
+                if (!element.Enabled || !element.Displayed)
                     return null;
                 return element;
             }

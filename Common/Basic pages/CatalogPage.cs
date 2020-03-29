@@ -1,16 +1,15 @@
-﻿using System;
+﻿using OpenQA.Selenium;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OpenQA.Selenium;
 
 namespace Common
 {
     public class CatalogPage : BasePage
     {
-        public CatalogRowContent RowContent => new CatalogRowContent(Driver, Driver.FindElement(By.CssSelector(".tab-content")));
-
+        public Filters Filters { get; set; }
+        public List<Item> Items => Driver.FindElements(By.CssSelector(".product_list.grid.row li .product-container")).Select(element => new Item(Driver, element)).ToList();
+        public List<IWebElement> ViewedItemsName => Driver.FindElements(By.CssSelector("#viewed-products_block_left div ul li a.product-name")).ToList();
+        public QuickViewWindow QuickViewWindow => new QuickViewWindow(Driver, Driver.FindElement(By.CssSelector(".fancybox-inner")));
         public CatalogPage(IWebDriver driver) : base(driver)
         {
 

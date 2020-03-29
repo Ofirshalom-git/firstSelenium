@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using OpenQA.Selenium;
 
 namespace Common
 {
     public class CartTable : ComppenantBase
     {
-        //public IWebElement Table => Driver.FindElement(By.CssSelector("#cart_summary"));
-
         public List<IWebElement> Garbage { get; set; }
         public List<IWebElement> Price { get; set; }
         public List<IWebElement> NumOfItems { get; set; }
@@ -26,6 +21,7 @@ namespace Common
                 NumOfItems = Driver.FindElements(By.CssSelector(".cart_quantity.text-center")).ToList();
                 Quantity = Driver.FindElement(By.CssSelector("#summary_products_quantity"));
             }
+
             catch
             {
                 Quantity = Driver.FindElement(By.CssSelector(".alert.alert-warning"));

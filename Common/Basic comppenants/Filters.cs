@@ -1,9 +1,6 @@
 ﻿using OpenQA.Selenium;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Common
 {
@@ -21,16 +18,16 @@ namespace Common
         public double[] GerPriceRange()
         {
             var priceRangeString = PriceRange.ToString();
-            var lowestPriceString = new char[4];
-            var highestPriceString = new char[4];
+            var lowestPriceString = new char[5];
+            var highestPriceString = new char[5];
             for (var i = 0; i < priceRangeString.Length; i++)
             {
-                if (i > 0 && i < 5)
+                if (i > 0 && i < 6)
                 {
                     lowestPriceString[i] = priceRangeString[i];
                 }
 
-                if (i > priceRangeString.Length - 5 && i < priceRangeString.Length)
+                if (i > priceRangeString.Length - 6 && i < priceRangeString.Length)
                 {
                     lowestPriceString[i] = priceRangeString[i];
                 }
@@ -38,8 +35,8 @@ namespace Common
 
             var lowestPrice = double.Parse(lowestPriceString.ToString());
             var highestPrice = double.Parse(highestPriceString.ToString());
+
             return new double[2] { lowestPrice, highestPrice };
         }
-
     }
 }

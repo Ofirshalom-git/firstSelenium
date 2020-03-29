@@ -14,10 +14,7 @@ namespace Common
 
         }
 
-        public void Fill(string text)
-        {
-            ParentElement.SendKeys(text);            
-        }
-
+        public void Fill(string text) =>        
+            ParentElement.SendKeys(text);                    
     }
 }

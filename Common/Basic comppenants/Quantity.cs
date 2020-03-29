@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 
 namespace Common
 {
@@ -18,16 +13,12 @@ namespace Common
 
         }
 
-        public void IncreaseQuantityBy(int units)
-        {
+        public void IncreaseQuantityBy(int units) =>
             MultiplyClick(QuantityIncrease, units);
-        }
-
-        public void DecreaseQuantityBy(int units)
-        {
+        
+        public void DecreaseQuantityBy(int units) =>
             MultiplyClick(QuantityDecrease, units);
-        }
-
+        
         public void ChangeQuantity(double units)
         {
             QuantityByNumber.Clear();
