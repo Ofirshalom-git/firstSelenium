@@ -16,15 +16,15 @@ namespace Common
         {
             try
             {
-                Garbage = Driver.FindElements(By.CssSelector(".icon-trash")).ToList();
-                Price = Driver.FindElements(By.CssSelector(".cart_total .price")).ToList();
-                NumOfItems = Driver.FindElements(By.CssSelector(".cart_quantity.text-center")).ToList();
-                Quantity = Driver.FindElement(By.CssSelector("#summary_products_quantity"));
+                Garbage = ParentElement.FindElements(By.CssSelector(".icon-trash")).ToList();
+                Price = ParentElement.FindElements(By.CssSelector(".cart_total .price")).ToList();
+                NumOfItems = ParentElement.FindElements(By.CssSelector(".cart_quantity.text-center")).ToList();
+                Quantity = ParentElement.FindElement(By.CssSelector("#summary_products_quantity"));
             }
 
             catch
             {
-                Quantity = Driver.FindElement(By.CssSelector(".alert.alert-warning"));
+                Quantity = ParentElement.FindElement(By.CssSelector(".alert.alert-warning"));
             }
         }
 

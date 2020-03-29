@@ -19,6 +19,7 @@ namespace MyStoreAtomation
         {
             Driver = new ChromeDriver();
             Driver.Navigate().GoToUrl("http://automationpractice.com/index.php");
+            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(60);
             HomePage = new HomePage(Driver);
             CatalogPage = HomePage.GoToCatalogPage();
         }

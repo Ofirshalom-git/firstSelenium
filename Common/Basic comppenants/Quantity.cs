@@ -4,9 +4,9 @@ namespace Common
 {
     public class Quantity : ComppenantBase
     {
-        public IWebElement QuantityIncrease => Driver.FindElement(By.CssSelector(".cart_quantity.text-center"));
-        public IWebElement QuantityDecrease => Driver.FindElement(By.CssSelector(".cart_quantity.text-center"));
-        public IWebElement QuantityByNumber => Driver.FindElement(By.CssSelector(".cart_quantity.text-center"));
+        public IWebElement QuantityIncrease => ParentElement.FindElement(By.CssSelector(".cart_quantity.text-center"));
+        public IWebElement QuantityDecrease => ParentElement.FindElement(By.CssSelector(".cart_quantity.text-center"));
+        public IWebElement QuantityByNumber => ParentElement.FindElement(By.CssSelector(".cart_quantity.text-center"));
 
         public Quantity(IWebDriver driver, IWebElement parentElement) : base(driver, parentElement)
         {

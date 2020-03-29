@@ -5,9 +5,9 @@ namespace Common
 {
     public class CatalogCategories : ComppenantBase
     {
-        public Button Women => Driver.FindElements(By.CssSelector("#block_top_menu ul.sf-menu li a.sf-with-ul")).Select(element => new Button(Driver, element)).ToList()[0];
-        public Button Dresses => Driver.FindElements(By.CssSelector("#block_top_menu ul.sf-menu li a.sf-with-ul")).Select(element => new Button(Driver, element)).FirstOrDefault(element => element.ToString().ToLower() == "dresses");
-        public Button TShirts => Driver.FindElements(By.CssSelector("#block_top_menu ul.sf-menu li a.sf-with-ul")).Select(element => new Button(Driver, element)).FirstOrDefault(element => element.ToString().ToLower() == "t-shirts");
+        public Button Women => ParentElement.FindElements(By.CssSelector("#block_top_menu ul.sf-menu li a.sf-with-ul")).Select(element => new Button(Driver, element)).ToList()[0];
+        public Button Dresses => ParentElement.FindElements(By.CssSelector("#block_top_menu ul.sf-menu li a.sf-with-ul")).Select(element => new Button(Driver, element)).FirstOrDefault(element => element.ToString().ToLower() == "dresses");
+        public Button TShirts => ParentElement.FindElements(By.CssSelector("#block_top_menu ul.sf-menu li a.sf-with-ul")).Select(element => new Button(Driver, element)).FirstOrDefault(element => element.ToString().ToLower() == "t-shirts");
 
         public CatalogCategories(IWebDriver driver, IWebElement parentElement) : base(driver, parentElement)
         {
